@@ -1637,18 +1637,23 @@ summary {
 </div>
 
 
-<p>#Support Vetor Machines</p>
+<div id="support-vector-machines" class="section level1">
+<h1>Support Vector Machines</h1>
 <p>An introduction to support vector machines taken from lecture notes presented by Dr. Luis Torgo at Dalhousie University on October 22 and 24.</p>
 <p>SVM’S were introduced in 1992 at the Conference on Learning Theory in Pittsburgh, Pasadena. Since their inception SVM’s have been applied with success in a wide range of areas like: bio-informatics, text mining, and hand-written character recognition.</p>
 <p>They are useful in solving binary classification problems where a linear separation of class sets are necessary. They have proven very effective for linearly separable problems.</p>
 <p>However, as most scientists know, most data is not linearly separable. To get around this issue we then project our data into a much higer dimensional space where we can then apply a linear approximation.</p>
 <p><strong>Map the original data into a new (higher dimensional) coordinate system where our class data becomes linearly separable by a maximum margin hyperplane </strong></p>
-<p>#Support Vector Machines in R for Now we will learn how to implement a SVM in R. The package is accessible at e1071: <a href="https://cran.r-project.org/web/packages/e1071/index.html" class="uri">https://cran.r-project.org/web/packages/e1071/index.html</a> .</p>
+</div>
+<div id="support-vector-machines-in-r" class="section level1">
+<h1>Support Vector Machines in R</h1>
+<p>Now we will learn how to implement a SVM in R. The package is accessible at e1071: <a href="https://cran.r-project.org/web/packages/e1071/index.html" class="uri">https://cran.r-project.org/web/packages/e1071/index.html</a> .</p>
 <p>e1071: Misc Functions of the Department of Statistics, Probability Theory Group. Provides functions for latent class analysis, short time Fourier Transforms, fuzzy clustering, support vector machines, shortest path computation, bagged clustering, and more.</p>
 <p>Import the statistical package,</p>
 <pre class="r"><code>library(e1071)
 set.seed(1234)</code></pre>
-<p>##Load the “Iris” dataset.</p>
+<div id="load-the-iris-dataset." class="section level2">
+<h2>Load the “Iris” dataset.</h2>
 <pre class="r"><code>data(iris)</code></pre>
 <pre class="r"><code>head(iris)</code></pre>
 <div data-pagedtable="false">
@@ -1659,6 +1664,7 @@ set.seed(1234)</code></pre>
 <p>Display the total number of rows in the dataset.</p>
 <pre class="r"><code>nrow(iris)</code></pre>
 <pre><code>## [1] 150</code></pre>
+</div>
 <div id="create-our-training-and-testing-sets-of-data." class="section level2">
 <h2>Create our training and testing sets of data.</h2>
 <p>We use the sample() function to take a random number of rows from our dataset.</p>
@@ -1675,7 +1681,10 @@ model2 &lt;- svm(Species ~.,training,cost=20)</code></pre>
 <h2>Prediction Phase:</h2>
 <pre class="r"><code>ps1&lt;- predict(model1,test)
 ps2&lt;- predict(model2,test)</code></pre>
-<p>##Error calculations: Create a confusion matrix to alert us of when our model made correct / incorrect classifications.</p>
+</div>
+<div id="error-calculations" class="section level2">
+<h2>Error calculations:</h2>
+<p>Create a confusion matrix to alert us of when our model made correct / incorrect classifications.</p>
 <pre class="r"><code>mc1 &lt;- table(ps1,test$Species)
 mc2 &lt;- table(ps2,test$Species)</code></pre>
 <pre class="r"><code>mc1</code></pre>
@@ -1697,6 +1706,7 @@ print(e1)</code></pre>
 <pre><code>## [1] 0.04</code></pre>
 <pre class="r"><code>print(e2)</code></pre>
 <pre><code>## [1] 0.04</code></pre>
+</div>
 </div>
 <div id="support-vector-machines-for-regression" class="section level1">
 <h1>Support Vector Machines for Regression</h1>

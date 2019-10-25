@@ -5,7 +5,7 @@ output:
   html_document:
     df_print: paged
 ---
-#Support Vetor Machines
+# Support Vector Machines
 
 An introduction to support vector machines taken from lecture notes presented by Dr. Luis Torgo at Dalhousie University on October 22 and 24.
 
@@ -17,7 +17,7 @@ However, as most scientists know, most data is not linearly separable. To get ar
 
 **Map the original data into a new (higher dimensional) coordinate system where our class data becomes linearly separable by a maximum margin hyperplane **
 
-#Support Vector Machines in R for 
+# Support Vector Machines in R 
 Now we will learn how to implement a SVM in R.
 The package is accessible at e1071: https://cran.r-project.org/web/packages/e1071/index.html . 
 
@@ -30,7 +30,7 @@ library(e1071)
 set.seed(1234)
 ```
 
-##Load the "Iris" dataset.
+## Load the "Iris" dataset.
 ```{r}
 data(iris)
 ```
@@ -65,7 +65,7 @@ ps1<- predict(model1,test)
 ps2<- predict(model2,test)
 ```
 
-##Error calculations: 
+## Error calculations: 
 Create a confusion matrix to alert us of when our model made correct / incorrect classifications.
 ```{r}
 mc1 <- table(ps1,test$Species)
